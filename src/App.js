@@ -4,10 +4,9 @@ import createModule from "./add.mjs";
 function App() {
 
   const [add, setAdd] = useState();
-  
   useEffect(
     () => {
-   createModule().then((Module) => {
+    createModule().then((Module) => {
     setAdd(() => Module.cwrap("add", "number", ["number", "number"]));
     });
   }, []);
